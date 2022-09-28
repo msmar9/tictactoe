@@ -22,13 +22,11 @@ module TTTMod
 
   def ask_symbol
     # Returns a string with the player's symbol
-    puts "
-    Your symbol:\n
+    puts "Your symbol:
     (Must be a single char that is not a digit different from 0)"
     symbol = gets.chomp
     def another_symbol
-      puts "
-      Choose a valid symbol:\n
+      puts "Choose a valid symbol:
       (Must be a single char that is not a digit different from 0)"
       symbol = gets.chomp
       symbol = valid_symbol?(symbol) ? symbol : another_symbol
@@ -40,7 +38,7 @@ module TTTMod
 
   def valid_input?(input, current_board)
     # Returns a boolean based on the validity of the input (a string
-    # signaling a position on the board) and the current board (an array)
+    # signaling a position on the board) and the current board (an array of integers)
     current_board.include?(input.to_i) && (input.to_i != 0)
   end
 

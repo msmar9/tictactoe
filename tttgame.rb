@@ -4,6 +4,8 @@ require './tttmod.rb'
 class TTTGame
   include TTTMod
 
+  attr_reader :squares
+
   def initialize
     @squares = NUMBERS
   end
@@ -33,6 +35,13 @@ class TTTGame
   def put(input, symbol)
     @squares[input.to_i - 1] = symbol
   end
+
+  def draw?
+    @squares.reduce(true) do |boolean, value|
+      boolean = boolean && !NUMBERS.include?(value.to_i)
+      boolean
+    end
+  end
 end
 
 #-----------------------
@@ -45,3 +54,11 @@ end
 #game.put(3,'x')
 #game.display
 #p game.over?
+#game.put(8,'o')
+#game.put(9,'o')
+#game.put(4,'o')
+#game.put(6,'o')
+#game.put(1,'o')
+#game.put(2,'o')
+#game.display
+#p game.draw?
