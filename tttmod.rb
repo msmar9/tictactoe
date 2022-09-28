@@ -2,6 +2,12 @@
 module TTTMod
   NUMBERS = (1..9).to_a
 
+  WINNING_COMBINATIONS = [
+    [7, 8, 9], [4, 5, 6], [1, 2, 3], 
+    [7, 4, 1], [8, 5, 2], [9, 6, 3], 
+    [7, 5, 3], [9, 5, 1]
+  ]
+
   def ask_name
     # Returns a string with the player's name
     puts "Your name:"
