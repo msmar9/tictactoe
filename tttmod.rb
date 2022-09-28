@@ -56,7 +56,7 @@ end
 
 #----------------------------
 # Testing
-include TTTMod
+#include TTTMod
 #p ask_name
 #p valid_symbol?('x') == true
 #p valid_symbol?('6') == false
